@@ -22,6 +22,10 @@ public class MyController {
     public List<Employee> getAll() {
         return employeeService.getAllEmployees();
     }
+    @GetMapping("/find/{name}")
+    public List<Employee> findAllByName(@PathVariable("name") String name){
+        return employeeService.findAllByName(name);
+    }
 
     @GetMapping("/{id}")
     public Employee getOneEmployee(@PathVariable("id") int id) {
